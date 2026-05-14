@@ -1,0 +1,146 @@
+/* <= 1820px */
+@media (min-width: 1820px) {}
+
+/* <= 1600px */
+@media (max-width: 1600px) {}
+
+/* <= 1440px */
+@media (max-width: 1440px) {
+    .hero-bg {
+        padding-top: 150px;
+    }
+
+    .hero-content {
+        font-size: 66px;
+    }
+
+    .hero-content p {
+        font-size: 46px;
+    }
+
+    .hero-img:before,
+    .hero-img:after {
+        left: 42%;
+    }
+}
+
+/* <= 1200px */
+@media (max-width: 1200px) {}
+
+/* <= 1024px */
+@media (max-width: 1024px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .header-main {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .drawer-cta {
+        display: none;
+    }
+
+    /* header ends */
+    .hero-main {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .hero-content,
+    .hero-img {
+        align-items: center;
+        width: initial;
+        gap: 20px;
+    }
+
+    .hero-bg {
+        padding-top: 110px;
+    }
+
+    .followers {
+        top: 0;
+        right: -50px;
+    }
+
+    .hero-img img {
+        height: 420px;
+    }
+}
+
+/* <= 992px */
+@media (max-width: 992px) {}
+
+/* <= 768px */
+@media (max-width: 768px) {
+    .header-cta-wrapper {
+        display: none;
+    }
+
+    .drawer-cta {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .mobile-menu-drawer {
+        right: -70px;
+    }
+
+    .drawer-cta {
+        display: block;
+    }
+
+    .about-main {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img {
+        height: 420px;
+    }
+
+    .story-img {
+        height: 280px;
+        flex: 0 0 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mobile-menu-drawer {
+        right: -50px;
+    }
+
+    .hero-content {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .hero-img:before,
+    .hero-img:after {
+        width: 300px;
+    }
+
+    .hero-img:after {
+        width: 210px;
+        height: 210px;
+    }
+
+    .about-heading {
+        font-size: 36px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+}
