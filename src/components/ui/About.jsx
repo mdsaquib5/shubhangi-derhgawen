@@ -2,16 +2,6 @@ import Image from "next/image";
 import { SiGooglenews } from "react-icons/si";
 
 const About = () => {
-
-    const storyImages = [
-        "/story.jpg",
-        "/story-2.jpg",
-        "/story-4.jpg",
-        "/story-3.jpg",
-        "/story-5.jpg",
-        "/story-6.jpg"
-    ];
-
     return (
         <section>
             <div className="container">

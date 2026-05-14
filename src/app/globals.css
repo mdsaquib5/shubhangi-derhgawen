@@ -410,3 +410,126 @@ header {
 .story-slider::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
 }
+
+/* about me ends */
+.comments-bg {
+    background: url('/insight-2.webp') no-repeat center / cover fixed;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-box {
+    /* background: #3339; */
+    background: #3333334f;
+    color: #eee;
+    border-radius: 16px;
+    width: 380px;
+    padding: 15px 20px;
+    font-weight: 300;
+    font-size: 14px;
+    position: absolute;
+    backdrop-filter: blur(12px);
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.comment-box p {
+    line-height: 1.6;
+}
+
+.comment-box:nth-child(1) {
+    top: 8%;
+    left: 4%;
+    animation-delay: 0s;
+}
+
+.comment-box:nth-child(2) {
+    top: 12%;
+    right: 7%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.comment-box:nth-child(3) {
+    top: 25%;
+    left: 12%;
+    animation-delay: 0.5s;
+    animation-duration: 8s;
+}
+
+.comment-box:nth-child(4) {
+    top: 32%;
+    right: 15%;
+    animation-delay: 2s;
+    animation-duration: 6s;
+}
+
+.comment-box:nth-child(5) {
+    top: 48%;
+    left: 3%;
+    animation-delay: 1.5s;
+    animation-duration: 9s;
+}
+
+.comment-box:nth-child(6) {
+    top: 55%;
+    right: 5%;
+    animation-delay: 0.2s;
+    animation-duration: 5.5s;
+}
+
+.comment-box:nth-child(7) {
+    top: 68%;
+    left: 18%;
+    animation-delay: 2.5s;
+    animation-duration: 7.5s;
+}
+
+.comment-box:nth-child(8) {
+    top: 75%;
+    right: 12%;
+    animation-delay: 1.2s;
+    animation-duration: 8.5s;
+}
+
+.comment-box:nth-child(9) {
+    top: 85%;
+    left: 6%;
+    animation-delay: 0.8s;
+    animation-duration: 6.5s;
+}
+
+.comment-box:nth-child(10) {
+    top: 90%;
+    right: 18%;
+    animation-delay: 3s;
+    animation-duration: 10s;
+}
+
+.comment-box:nth-child(11) {
+    top: 40%;
+    left: 25%;
+    animation-delay: 1.8s;
+    animation-duration: 7s;
+    opacity: 0.9;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(10px, -20px) rotate(1.5deg);
+    }
+
+    66% {
+        transform: translate(-10px, 10px) rotate(-1.5deg);
+    }
+}

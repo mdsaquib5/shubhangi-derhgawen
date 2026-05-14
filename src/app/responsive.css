@@ -75,6 +75,11 @@
     .hero-img img {
         height: 420px;
     }
+
+    .comment-box {
+        width: 300px;
+        font-size: 13px;
+    }
 }
 
 /* <= 992px */
@@ -111,6 +116,15 @@
         height: 280px;
         flex: 0 0 280px;
     }
+
+    .comments {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        height: auto;
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 576px) {
@@ -142,5 +156,10 @@
 
     .about-content p {
         font-size: 14px;
+    }
+
+    .comment-box {
+        width: 260px;
+        font-size: 12px;
     }
 }
