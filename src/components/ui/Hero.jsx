@@ -7,7 +7,7 @@ const roles = [
     "Journalist",
     "Author",
     "TEDx Speaker",
-    "Ground Report"
+    "Ground Reporter"
 ];
 
 const Hero = () => {
