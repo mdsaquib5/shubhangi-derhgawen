@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const roles = [
     "Journalist",
-    "an Author",
+    "Author",
     "TEDx Speaker",
     "Ground Reporter"
 ];
