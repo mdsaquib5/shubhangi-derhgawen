@@ -420,6 +420,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-block: 80px;
 }
 
 .comment-box {
@@ -532,4 +533,82 @@ header {
     66% {
         transform: translate(-10px, 10px) rotate(-1.5deg);
     }
+}
+
+/* comments ends */
+.news-bg {
+    position: relative;
+    height: 100vh;
+    margin-block: 80px;
+}
+
+.news-title-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 130px;
+    font-weight: 800;
+    background: linear-gradient(145deg, #ffa945 0%, #f820a3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.instagram-posts-wrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.instagram-post {
+    position: absolute;
+    width: 300px;
+    pointer-events: auto;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 4;
+}
+
+.instagram-post img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.instagram-post:nth-child(1) {
+    top: 2%;
+    left: 2%;
+}
+
+.instagram-post:nth-child(2) {
+    bottom: -4%;
+    left: 10%;
+}
+
+.instagram-post:nth-child(3) {
+    top: 5%;
+    right: 2%;
+}
+
+.instagram-post:nth-child(4) {
+    top: 10%;
+    left: 32%;
+    z-index: -1;
+}
+
+.instagram-post:nth-child(5) {
+    bottom: -8%;
+    right: 8%;
+}
+
+.instagram-post:nth-child(6) {
+    bottom: 6%;
+    right: 30%;
+    z-index: -1;
 }
