@@ -612,3 +612,57 @@ header {
     right: 30%;
     z-index: -1;
 }
+
+/* instagram ends */
+
+.media-bg {
+    background-color: #000;
+    height: 100vh;
+}
+
+.media-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+}
+
+.gallery-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.gallery-2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.media-item {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #ccc;
+    height: 260px;
+    border-radius: 10px;
+}
+
+.media-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.signature {
+    font-size: 100px;
+    text-transform: capitalize;
+    font-family: var(--font-cursive);
+    color: #fff;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    justify-content: center;
+}

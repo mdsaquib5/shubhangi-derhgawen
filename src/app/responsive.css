@@ -37,7 +37,10 @@
     .instagram-post:nth-child(6) {
         bottom: 6%;
         right: 30%;
+    }
 
+    .news-bg {
+        margin-bottom: 260px;
     }
 }
 
@@ -58,6 +61,10 @@
     .hero-img:before,
     .hero-img:after {
         left: 42%;
+    }
+
+    .media-bg {
+        height: 100%;
     }
 }
 
@@ -133,6 +140,22 @@
 
     section {
         padding-block: 60px;
+    }
+
+    .news-bg {
+        margin-bottom: 110px;
+    }
+
+    .media-main,
+    .gallery-1,
+    .gallery-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .signature {
+        text-align: left;
+        font-size: 68px;
+        margin-bottom: 16px;
     }
 }
 
@@ -243,5 +266,9 @@
 
     section {
         padding-block: 30px;
+    }
+
+    .signature {
+        font-size: 26px;
     }
 }
