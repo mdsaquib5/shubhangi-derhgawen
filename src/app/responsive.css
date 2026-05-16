@@ -45,7 +45,6 @@
 
     .brand-bg {
         padding-bottom: 90px;
-        margin-bottom: 80px;
     }
 }
 
@@ -164,11 +163,15 @@
 
     .brand-bg {
         padding-bottom: 60px;
-        margin-bottom: 60px;
+        /* margin-bottom: 60px; */
     }
 
     .blogs-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        padding: 30px;
     }
 }
 
@@ -176,6 +179,21 @@
 @media (max-width: 992px) {
     .news-bg {
         margin: 0;
+    }
+
+    .footer-top {
+        padding: 20px;
+    }
+
+    .social-media a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-media svg {
+        font-size: initial;
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -291,5 +309,11 @@
 
     .blogs-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-top {
+        padding: 10px;
+        flex-direction: column;
+        gap: 12px;
     }
 }
