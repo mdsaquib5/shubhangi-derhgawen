@@ -42,6 +42,11 @@
     .news-bg {
         margin-bottom: 260px;
     }
+
+    .brand-bg {
+        padding-bottom: 90px;
+        margin-bottom: 80px;
+    }
 }
 
 /* <= 1440px */
@@ -133,8 +138,7 @@
         width: 220px;
     }
 
-    .comments-bg,
-    .news-bg {
+    .comments-bg {
         margin: 0;
     }
 
@@ -157,10 +161,19 @@
         font-size: 68px;
         margin-bottom: 16px;
     }
+
+    .brand-bg {
+        padding-bottom: 60px;
+        margin-bottom: 60px;
+    }
 }
 
 /* <= 992px */
-@media (max-width: 992px) {}
+@media (max-width: 992px) {
+    .news-bg {
+        margin: 0;
+    }
+}
 
 /* <= 768px */
 @media (max-width: 768px) {
