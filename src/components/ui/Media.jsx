@@ -9,16 +9,16 @@ const Media = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [
-        { id: 1, src: '/covered-1.webp' },
-        { id: 2, src: '/covered-1.webp' },
-        { id: 3, src: '/covered-1.webp' },
-        { id: 4, src: '/covered-1.webp' },
-        { id: 5, src: '/covered-1.webp' },
-        { id: 6, src: '/covered-1.webp' },
-        { id: 7, src: '/covered-1.webp' },
-        { id: 8, src: '/covered-1.webp' },
-        { id: 9, src: '/covered-1.webp' },
-        { id: 10, src: '/covered-1.webp' },
+        { id: 1, src: '/covered/covered-1.webp' },
+        { id: 2, src: '/covered/covered-2.webp' },
+        { id: 3, src: '/covered/covered-3.webp' },
+        { id: 4, src: '/covered/covered-4.webp' },
+        { id: 5, src: '/covered/covered-5.webp' },
+        { id: 6, src: '/covered/covered-1.webp' },
+        { id: 7, src: '/covered/covered-2.webp' },
+        { id: 8, src: '/covered/covered-3.webp' },
+        { id: 9, src: '/covered/covered-4.webp' },
+        { id: 10, src: '/covered/covered-5.webp' },
     ];
 
     const openLightbox = (index) => {

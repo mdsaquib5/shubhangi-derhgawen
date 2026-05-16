@@ -24,7 +24,7 @@ const ReelCard = ({ reel }) => {
 
                 {isPlaying ? (
                     <video
-                        src={reel.video || "https://www.w3schools.com/html/mov_bbb.mp4"}
+                        src={reel.video}
                         autoPlay
                         controls
                         className="reel-video"
@@ -50,12 +50,12 @@ const ReelCard = ({ reel }) => {
 
 const Instagram = () => {
     const reels = [
-        { id: 1, img: "/rabish.jpg", video: "" },
-        { id: 2, img: "/rabish.jpg", video: "" },
-        { id: 3, img: "/rabish.jpg", video: "" },
-        { id: 4, img: "/rabish.jpg", video: "" },
-        { id: 5, img: "/rabish.jpg", video: "" },
-        { id: 6, img: "/rabish.jpg", video: "" },
+        { id: 1, img: "/rabish.jpg", video: "/reels/video1.mp4" },
+        { id: 2, img: "/rabish.jpg", video: "/reels/video2.mp4" },
+        { id: 3, img: "/rabish.jpg", video: "/reels/video1.mp4" },
+        { id: 4, img: "/rabish.jpg", video: "/reels/video2.mp4" },
+        { id: 5, img: "/rabish.jpg", video: "/reels/video1.mp4" },
+        { id: 6, img: "/rabish.jpg", video: "/reels/video2.mp4" },
     ];
 
     return (

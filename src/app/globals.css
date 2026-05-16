@@ -383,7 +383,7 @@ header {
 .story-slider {
     display: flex;
     gap: 16px;
-    overflow-x: auto;
+    overflow-x: scroll;
     padding-bottom: 15px;
     scrollbar-width: thin;
     scrollbar-color: #ddd transparent;
