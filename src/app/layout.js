@@ -4,6 +4,7 @@ import "./layout.css";
 import "./globals.css";
 import "./responsive.css";
 import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
 
 export const metadata = {
   title: "Influencer Porfolio",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={`${outfit.variable} ${barlow.variable} ${sacramento.variable} ${outfit.className}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
