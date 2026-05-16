@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 const roles = [
     "Journalist",
-    "Author",
     "TEDx Speaker",
     "Ground Reporter"
 ];
@@ -65,7 +64,7 @@ const Hero = () => {
                         <div className="hero-heading">Hey, I'm <span>Shubhangi </span>!</div>
                         <div className="profile">I am a <span className="highlight-text">{roles[index].substring(0, subIndex)}<span className="typing-cursor"></span></span></div>
                         <p>Reporting Beyond The Headlines</p>
-                        <Link href="/" className="btn primary-btn">See my Journalism</Link>
+                        <Link href="#news" className="btn primary-btn">See my Journalism</Link>
                     </div>
                     <div className="hero-img">
                         <Image src="/girl.png" alt="hero-img" width={204} height={489} priority />

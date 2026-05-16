@@ -10,8 +10,8 @@ const Footer = () => {
                 <div className="footer-top">
                     <Logo />
                     <div className="social-media">
-                        <Link href={'/'}><RxInstagramLogo /></Link>
-                        <Link href={'/'}><AiOutlineYoutube /></Link>
+                        <Link href={'https://www.instagram.com/shubhangi.derhgawen?igsh=MTB3ejdoMmpxMHMyeA%3D%3D&utm_source=qr'} target="_blank"><RxInstagramLogo /></Link>
+                        <Link href={'https://www.youtube.com/@ShubhangiReports'} target="_blank"><AiOutlineYoutube /></Link>
                     </div>
                 </div>
                 <div className="chat" id="anim">

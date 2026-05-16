@@ -29,7 +29,7 @@ const instagramPosts = [
 
 const News = () => {
     return (
-        <section className="news-bg">
+        <section className="news-bg" id="news">
             <div className="container">
                 <div className="news-title-bg">Instagram News</div>
                 <div className="instagram-posts-wrapper">
