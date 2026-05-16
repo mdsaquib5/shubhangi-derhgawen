@@ -70,6 +70,11 @@
     .media-bg {
         height: 100%;
     }
+
+    .thumb-img,
+    .reel-video {
+        padding: 14px;
+    }
 }
 
 /* <= 1200px */
@@ -173,6 +178,7 @@
     .footer-top {
         padding: 30px;
     }
+
 }
 
 /* <= 992px */

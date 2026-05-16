@@ -1006,6 +1006,105 @@ header {
 
 /* blogs ends */
 
+.reels-header {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    margin-bottom: 40px;
+}
+
+.reels-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.reels-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: var(--black-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reels-nav button:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.reel-card {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    cursor: grab;
+}
+
+.reel-card:active {
+    cursor: grabbing;
+}
+
+.reel-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.thumb-img,
+.reel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    padding: 19px;
+}
+
+.reel-thumb-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.frame-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.reel-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
 /* instagram end */
 footer {
     background-color: #000;
