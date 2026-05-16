@@ -329,4 +329,9 @@
         gap: 10px;
         font-size: 14px;
     }
+
+    .thumb-img,
+    .reel-video {
+        border-radius: 60px;
+    }
 }
