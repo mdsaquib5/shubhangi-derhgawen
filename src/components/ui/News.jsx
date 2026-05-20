@@ -2,27 +2,27 @@ import Image from "next/image";
 
 const instagramPosts = [
     {
-        post: "/post-1.jpg",
+        post: "/post-1.webp",
         alt: "post-1"
     },
     {
-        post: "/post-6.jpg",
+        post: "/post-6.webp",
         alt: "post-2"
     },
     {
-        post: "/post-3.jpg",
+        post: "/post-3.webp",
         alt: "post-3"
     },
     {
-        post: "/post-4.jpg",
+        post: "/post-4.webp",
         alt: "post-4"
     },
     {
-        post: "/post-5.jpg",
+        post: "/post-5.webp",
         alt: "post-5"
     },
     {
-        post: "/post-8.jpg",
+        post: "/post-8.webp",
         alt: "post-6"
     }
 ]

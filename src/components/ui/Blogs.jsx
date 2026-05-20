@@ -4,82 +4,82 @@ import BlogCard from "../shared/BlogCard";
 const Blogs = () => {
     const blogs = [
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },
         {
-            img: "/rabish.jpg",
+            img: "/rabish.webp",
             title: "How to choose the laptop",
             desc: "Choosing the right laptop for programming can be a tough process.",
             author: "Shubhangi Derhgawen",
             date: "October 16, 2023",
-            authorImg: "/ig.jpg",
+            authorImg: "/ig.webp",
             authLink: "/",
             blogLink: "/"
         },

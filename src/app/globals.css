@@ -139,7 +139,7 @@ header {
 
 /* Header ends */
 .hero-bg {
-    background: url('/hero-bg.jpg');
+    background: url('/hero-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -821,7 +821,7 @@ header {
 
 /* media ends */
 .brand-bg {
-    background: url('/brand-bg.jpg') no-repeat center / cover;
+    background: url('/brand-bg.webp') no-repeat center / cover;
     padding-bottom: 120px;
 }
 

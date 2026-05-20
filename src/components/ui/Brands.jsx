@@ -9,16 +9,16 @@ import Image from 'next/image';
 import { SiGooglenews } from 'react-icons/si';
 
 const brandsData = [
-    { alt: "Brand-1", img: "/brand-1.png" },
-    { alt: "Brand-2", img: "/brand-2.png" },
-    { alt: "Brand-1", img: "/brand-1.png" },
-    { alt: "Brand-2", img: "/brand-2.png" },
-    { alt: "Brand-1", img: "/brand-1.png" },
-    { alt: "Brand-2", img: "/brand-2.png" },
-    { alt: "Brand-1", img: "/brand-1.png" },
-    { alt: "Brand-2", img: "/brand-2.png" },
-    { alt: "Brand-1", img: "/brand-1.png" },
-    { alt: "Brand-2", img: "/brand-2.png" },
+    { alt: "Brand-1", img: "/brand-1.webp" },
+    { alt: "Brand-2", img: "/brand-2.webp" },
+    { alt: "Brand-1", img: "/brand-1.webp" },
+    { alt: "Brand-2", img: "/brand-2.webp" },
+    { alt: "Brand-1", img: "/brand-1.webp" },
+    { alt: "Brand-2", img: "/brand-2.webp" },
+    { alt: "Brand-1", img: "/brand-1.webp" },
+    { alt: "Brand-2", img: "/brand-2.webp" },
+    { alt: "Brand-1", img: "/brand-1.webp" },
+    { alt: "Brand-2", img: "/brand-2.webp" },
 ];
 
 const Brands = () => {
