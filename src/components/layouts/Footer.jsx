@@ -1,9 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { RxInstagramLogo } from "react-icons/rx";
 import { AiOutlineYoutube } from "react-icons/ai";
 import Logo from "../shared/Logo";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+    const pathname = usePathname();
+
+    if (pathname && pathname.startsWith("/admin")) {
+        return null;
+    }
     return (
         <footer>
             <div className="container">
