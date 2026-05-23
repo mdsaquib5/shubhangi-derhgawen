@@ -9,16 +9,16 @@ import Image from 'next/image';
 import { SiGooglenews } from 'react-icons/si';
 
 const brandsData = [
-    { alt: "Brand-1", img: "/brand-1.webp" },
-    { alt: "Brand-2", img: "/brand-2.webp" },
-    { alt: "Brand-1", img: "/brand-1.webp" },
-    { alt: "Brand-2", img: "/brand-2.webp" },
-    { alt: "Brand-1", img: "/brand-1.webp" },
-    { alt: "Brand-2", img: "/brand-2.webp" },
-    { alt: "Brand-1", img: "/brand-1.webp" },
-    { alt: "Brand-2", img: "/brand-2.webp" },
-    { alt: "Brand-1", img: "/brand-1.webp" },
-    { alt: "Brand-2", img: "/brand-2.webp" },
+    { alt: "Brand-1", img: "/brands/brand-1.webp" },
+    { alt: "Brand-2", img: "/brands/brand-2.webp" },
+    { alt: "Brand-1", img: "/brands/brand-1.webp" },
+    { alt: "Brand-2", img: "/brands/brand-2.webp" },
+    { alt: "Brand-1", img: "/brands/brand-1.webp" },
+    { alt: "Brand-2", img: "/brands/brand-2.webp" },
+    { alt: "Brand-1", img: "/brands/brand-1.webp" },
+    { alt: "Brand-2", img: "/brands/brand-2.webp" },
+    { alt: "Brand-1", img: "/brands/brand-1.webp" },
+    { alt: "Brand-2", img: "/brands/brand-2.webp" },
 ];
 
 const Brands = () => {
@@ -41,7 +41,7 @@ const Brands = () => {
     };
 
     return (
-        <section className="brand-bg">
+        <section className="brand-bg" id="brand-collaborations">
             <div className="container">
                 <div className="section-title">
                     <div className="title-icon"><SiGooglenews /> Brands Collaboration</div>

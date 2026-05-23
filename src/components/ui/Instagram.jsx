@@ -15,7 +15,7 @@ const ReelCard = ({ reel }) => {
         <div className="reel-card">
             <div className="reel-img">
                 <Image
-                    src="/frame.webp"
+                    src="/images/frame.webp"
                     alt="frame"
                     width={476}
                     height={942}
@@ -50,16 +50,16 @@ const ReelCard = ({ reel }) => {
 
 const Instagram = () => {
     const reels = [
-        { id: 1, img: "/rabish.webp", video: "/reels/video1.mp4" },
-        { id: 2, img: "/rabish.webp", video: "/reels/video2.mp4" },
-        { id: 3, img: "/rabish.webp", video: "/reels/video1.mp4" },
-        { id: 4, img: "/rabish.webp", video: "/reels/video2.mp4" },
-        { id: 5, img: "/rabish.webp", video: "/reels/video1.mp4" },
-        { id: 6, img: "/rabish.webp", video: "/reels/video2.mp4" },
+        { id: 1, img: "/about/rabish.webp", video: "/reels/video1.mp4" },
+        { id: 2, img: "/about/rabish.webp", video: "/reels/video2.mp4" },
+        { id: 3, img: "/about/rabish.webp", video: "/reels/video1.mp4" },
+        { id: 4, img: "/about/rabish.webp", video: "/reels/video2.mp4" },
+        { id: 5, img: "/about/rabish.webp", video: "/reels/video1.mp4" },
+        { id: 6, img: "/about/rabish.webp", video: "/reels/video2.mp4" },
     ];
 
     return (
-        <section className="instagram-reels">
+        <section className="instagram-reels" id="reels">
             <div className="container">
                 <div className="reels-header">
                     <div className="reels-nav">

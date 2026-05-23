@@ -52,7 +52,7 @@ const Media = () => {
     }, [isOpen, nextImage, prevImage]);
 
     return (
-        <section className="media-bg">
+        <section className="media-bg" id="stories">
             <div className='container'>
                 <div className="media-main">
                     <div className='gallery-1'>

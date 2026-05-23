@@ -13,7 +13,7 @@ const comments = [
 
 const Comments = () => {
     return (
-        <section className="comments-bg">
+        <section className="comments-bg" id="trending">
             <div className="container">
                 <div className="comments">
                     {comments.map((comment, index) => (

@@ -67,7 +67,7 @@ const Hero = () => {
                         <Link href="#news" className="btn primary-btn">See my Journalism</Link>
                     </div>
                     <div className="hero-img">
-                        <Image src="/girl.webp" alt="hero-img" width={204} height={489} priority />
+                        <Image src="/images/girl.webp" alt="hero-img" width={204} height={489} priority />
                         <div className="followers">{count}k<span>Followers</span></div>
                     </div>
                 </div>
