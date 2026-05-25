@@ -1360,6 +1360,7 @@ footer {
     position: sticky;
     top: 0;
     height: fit-content;
+    overflow: hidden;
 }
 
 .collab-form-step-title {
@@ -1531,6 +1532,7 @@ footer {
     padding: 20px;
     position: sticky;
     top: 0;
+    z-index: 2;
     height: 100vh;
 }
 
@@ -1538,6 +1540,7 @@ footer {
     flex: 1;
     padding: 30px;
     background: #f8fafc;
+    overflow: hidden;
 }
 
 .stats-grid {
@@ -1981,8 +1984,6 @@ footer {
 /* LeadRow Extracted Styles */
 .lead-row-ref {
     font-weight: 700;
-    color: #1e293b;
-    letter-spacing: 0.5px;
 }
 
 .lead-row-brand {
@@ -2383,10 +2384,6 @@ footer {
     padding: 20px 0;
 }
 
-.admin-dashboard-table-wrap {
-    overflow-x: auto;
-}
-
 .admin-dashboard-blog-list {
     display: flex;
     flex-direction: column;
@@ -2690,19 +2687,6 @@ footer {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
-    .blog-editor-footer {
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .blog-editor-status-wrap {
-        position: static;
-    }
-}
-
-
 .btn-secondary {
     background: #f3f4f6;
     color: #4b5563;
@@ -2873,6 +2857,7 @@ footer {
     align-items: center;
     gap: 30px;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .blog-detail-title {
@@ -2892,8 +2877,7 @@ footer {
 }
 
 .blog-detail-content {
-    font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.6;
     color: #333;
 }
 
@@ -2901,6 +2885,7 @@ footer {
     max-width: 100%;
     height: 500px;
     border-radius: 8px;
+    object-fit: cover;
     margin: 30px 0;
 }
 
@@ -2910,11 +2895,12 @@ footer {
     color: var(--primary);
 }
 
-.blog-detail-content h1,
 .blog-detail-content h2,
 .blog-detail-content h3 {
     color: #111;
     margin-top: 30px;
+    line-height: 1.5;
+    font-size: 30px;
     margin-bottom: 15px;
 }
 
@@ -2940,15 +2926,21 @@ footer {
     font-weight: 600;
     color: #475569;
     font-size: 13px;
+    white-space: nowrap;
     border-bottom: 1px solid #e2e8f0;
 }
 
 .admin-table td {
-    padding: 16px 20px;
+    padding: 8px 16px;
     border-bottom: 1px solid #f1f5f9;
     font-size: 14px;
     color: #334155;
     vertical-align: middle;
+}
+
+.admin-table td,
+th {
+    white-space: nowrap;
 }
 
 .admin-table tr:hover {
@@ -3197,22 +3189,6 @@ footer {
     to {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .admin-sidebar {
-        display: none;
-    }
-
-    .admin-content {
-        margin-left: 0;
-        padding: 20px;
-    }
-
-    .cms-container {
-        padding-top: 100px;
     }
 }
 
