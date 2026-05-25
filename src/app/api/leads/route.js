@@ -35,6 +35,7 @@ export async function POST(req) {
       website: body.website,
       contactName: body.contactName,
       contactRole: body.contactRole,
+      contactPhone: body.contactPhone,
       budget: body.budget,
       timeline: body.timeline,
       collabTypes: body.collabTypes,

@@ -35,7 +35,7 @@ const Nav = ({ isOpen, onClose }) => {
         { name: "News", href: "#news" },
         { name: "Stories", href: "#stories" },
         { name: "Reels", href: "#reels" },
-        { name: "Articles", href: "/blog" },
+        { name: "Articles", href: "/articles" },
         { name: "Brand Collaborations", href: "/collaborate" },
     ];
 

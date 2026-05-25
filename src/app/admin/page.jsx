@@ -5,6 +5,7 @@ import Blog from '@/models/Blog';
 import StatsCard from '@/components/admin/StatsCard';
 import LeadRow from '@/components/admin/LeadRow';
 import Link from 'next/link';
+import { FiArrowRight } from 'react-icons/fi';
 
 export const revalidate = 0;
 
@@ -31,13 +32,10 @@ export default async function AdminDashboardPage() {
 
   return (
     <div>
-      <div style={{ marginBottom: '30px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '700', color: '#0f172a', margin: '0 0 8px 0' }}>
-          Welcome back, Admin
+      <div className="admin-dashboard-header">
+        <h1 className="admin-dashboard-title">
+          Welcome back, Shubhangi !
         </h1>
-        <p style={{ color: '#64748b', margin: 0, fontSize: '15px' }}>
-          Here is what's happening with your portfolio website today.
-        </p>
       </div>
 
       <div className="stats-grid">
@@ -48,27 +46,26 @@ export default async function AdminDashboardPage() {
         <StatsCard label="Published Blogs" value={publishedBlogs} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '30px', marginTop: '30px' }}>
-        {/* Recent Pitches */}
-        <div className="cms-card" style={{ padding: '24px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: '600', color: '#0f172a', margin: 0 }}>
+      <div className="admin-dashboard-grid">
+        <div className="cms-card">
+          <div className="admin-dashboard-card-header">
+            <h2 className="admin-dashboard-card-title">
               Recent Collaboration Pitches
             </h2>
             <Link
               href="/admin/leads"
-              style={{ color: '#f820a3', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}
+              className="admin-dashboard-card-link"
             >
-              View All →
+              View All <FiArrowRight size={14} />
             </Link>
           </div>
 
           {recentLeads.length === 0 ? (
-            <p style={{ color: '#64748b', fontSize: '14px', textAlign: 'center', padding: '20px 0' }}>
+            <p className="admin-dashboard-empty">
               No pitches received yet.
             </p>
           ) : (
-            <div style={{ overflowX: 'auto' }}>
+            <div className="admin-dashboard-table-wrap">
               <table className="admin-table">
                 <thead>
                   <tr>
@@ -90,27 +87,25 @@ export default async function AdminDashboardPage() {
             </div>
           )}
         </div>
-
-        {/* Recent Blogs */}
-        <div className="cms-card" style={{ padding: '24px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: '600', color: '#0f172a', margin: 0 }}>
+        <div className="cms-card">
+          <div className="admin-dashboard-card-header">
+            <h2 className="admin-dashboard-card-title">
               Recent Blog Posts
             </h2>
             <Link
               href="/admin/blogs"
-              style={{ color: '#f820a3', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}
+              className="admin-dashboard-card-link"
             >
-              Manage →
+              Manage <FiArrowRight size={14} />
             </Link>
           </div>
 
           {recentBlogs.length === 0 ? (
-            <p style={{ color: '#64748b', fontSize: '14px', textAlign: 'center', padding: '20px 0' }}>
+            <p className="admin-dashboard-empty">
               No blog posts created yet.
             </p>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div className="admin-dashboard-blog-list">
               {recentBlogs.map((blog) => {
                 const formattedDate = new Date(blog.publishedAt || blog.createdAt).toLocaleDateString('en-US', {
                   month: 'short',
@@ -120,41 +115,22 @@ export default async function AdminDashboardPage() {
                 return (
                   <div
                     key={blog._id.toString()}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      paddingBottom: '12px',
-                      borderBottom: '1px solid #f1f5f9',
-                    }}
+                    className="admin-dashboard-blog-item"
                   >
                     <div
+                      className="admin-dashboard-blog-img"
                       style={{
-                        width: '50px',
-                        height: '50px',
-                        borderRadius: '6px',
                         background: blog.coverImage?.url ? `url(${blog.coverImage.url}) center/cover no-repeat` : 'linear-gradient(135deg, #ffa945 0%, #f820a3 100%)',
-                        flexShrink: 0,
                       }}
                     />
-                    <div style={{ overflow: 'hidden' }}>
-                      <h3
-                        style={{
-                          fontSize: '14px',
-                          fontWeight: '600',
-                          margin: '0 0 4px 0',
-                          whiteSpace: 'nowrap',
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          color: '#1e293b',
-                        }}
-                      >
+                    <div className="admin-dashboard-blog-info">
+                      <h3 className="admin-dashboard-blog-title">
                         {blog.title}
                       </h3>
-                      <div style={{ display: 'flex', gap: '8px', fontSize: '11px', color: '#64748b' }}>
+                      <div className="admin-dashboard-blog-meta">
                         <span>{formattedDate}</span>
                         <span>•</span>
-                        <span className={`status-badge ${blog.status}`} style={{ padding: '0px 6px', fontSize: '10px' }}>
+                        <span className={`status-badge ${blog.status} admin-dashboard-blog-status`}>
                           {blog.status}
                         </span>
                       </div>

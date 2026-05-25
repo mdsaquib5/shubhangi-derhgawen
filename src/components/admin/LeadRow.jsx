@@ -17,16 +17,16 @@ export default function LeadRow({ lead }) {
 
   return (
     <tr>
-      <td style={{ fontWeight: '700', color: '#1e293b', letterSpacing: '0.5px' }}>
+      <td className="lead-row-ref">
         {lead.referenceId}
       </td>
       <td>
-        <div style={{ fontWeight: '600' }}>{lead.brand}</div>
-        <div style={{ fontSize: '12px', color: '#64748b' }}>
+        <div className="lead-row-brand">{lead.brand}</div>
+        <div className="lead-row-contact">
           {lead.contactName} ({lead.contactRole})
         </div>
       </td>
-      <td style={{ fontWeight: '500', color: '#f820a3' }}>{lead.budget}</td>
+      <td className="lead-row-budget">{lead.budget}</td>
       <td>
         <div className={`score-badge ${scoreClass}`} title="Calculated lead quality score (0-100)">
           {lead.score}
@@ -39,8 +39,7 @@ export default function LeadRow({ lead }) {
       <td>
         <Link
           href={`/admin/leads/${lead._id}`}
-          className="btn primary-btn"
-          style={{ fontSize: '13px', height: '30px', paddingInline: '12px', textDecoration: 'none', display: 'inline-flex' }}
+          className="btn primary-btn lead-row-btn"
         >
           View
         </Link>

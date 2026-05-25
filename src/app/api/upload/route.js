@@ -29,7 +29,7 @@ export async function POST(req) {
       resourceType = 'raw';
     }
 
-    const result = await uploadMedia(buffer, folder, resourceType);
+    const result = await uploadMedia(buffer, folder, resourceType, file.name);
 
     return NextResponse.json({
       url: result.url,

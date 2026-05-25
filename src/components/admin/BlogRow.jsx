@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { FiExternalLink } from 'react-icons/fi';
 
 export default function BlogRow({ blog, onDeleteSuccess }) {
   const [isDeleting, setIsDeleting] = useState(false);
@@ -43,35 +44,32 @@ export default function BlogRow({ blog, onDeleteSuccess }) {
 
   return (
     <tr>
-      <td style={{ fontWeight: '600', color: '#1e293b' }}>{blog.title}</td>
+      <td className="blog-row-title">{blog.title}</td>
       <td>
         <span className={`status-badge ${blog.status}`}>{blog.status}</span>
       </td>
       <td>{blog.author?.name || 'Admin'}</td>
       <td>{formattedDate}</td>
       <td>
-        <div style={{ display: 'flex', gap: '8px' }}>
+        <div className="blog-row-actions">
+          <Link
+            href={`/articles/${blog.slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary blog-row-view-btn"
+          >
+            View <FiExternalLink size={13} />
+          </Link>
           <Link
             href={`/admin/blogs/${blog._id}`}
-            className="btn btn-secondary"
-            style={{ fontSize: '13px', height: '30px', paddingInline: '12px', textDecoration: 'none', display: 'inline-flex' }}
+            className="btn btn-secondary blog-row-edit-btn"
           >
             Edit
           </Link>
           <button
             onClick={handleDelete}
             disabled={isDeleting}
-            className="btn"
-            style={{
-              fontSize: '13px',
-              height: '30px',
-              paddingInline: '12px',
-              background: '#fee2e2',
-              color: '#dc2626',
-              border: '1px solid #fca5a5',
-              cursor: 'pointer',
-              opacity: isDeleting ? 0.7 : 1,
-            }}
+            className="btn blog-row-delete-btn"
           >
             {isDeleting ? 'Deleting...' : 'Delete'}
           </button>

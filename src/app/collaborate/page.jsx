@@ -1,6 +1,5 @@
 import React from 'react';
 import CollabForm from '@/components/public/CollabForm';
-import '@/app/cms-styles.css';
 
 export const metadata = {
   title: 'Collaborate - Shubhangi Portfolio',
@@ -9,8 +8,10 @@ export const metadata = {
 
 export default function CollaboratePage() {
   return (
-    <main className="cms-container">
-      <CollabForm />
-    </main>
+    <section className='articles-page'>
+      <div className="container">
+        <CollabForm />
+      </div>
+    </section>
   );
 }

@@ -74,65 +74,47 @@ export default function LeadActions({ lead }) {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div className="lead-actions-container">
       {message && (
         <div
-          style={{
-            background: message.startsWith('Error') ? '#fef2f2' : '#f0fdf4',
-            border: message.startsWith('Error') ? '1px solid #fca5a5' : '1px solid #bbf7d0',
-            padding: '12px 16px',
-            borderRadius: '8px',
-            fontSize: '14px',
-            color: message.startsWith('Error') ? '#991b1b' : '#16a34a',
-            fontWeight: '500',
-          }}
+          className={`lead-actions-msg ${message.startsWith('Error') ? 'lead-actions-msg-error' : 'lead-actions-msg-success'}`}
         >
           {message}
         </div>
       )}
 
-      <div className="form-group" style={{ margin: 0 }}>
-        <label className="form-label" style={{ fontWeight: '600', color: '#1e293b' }}>
+      <div className="form-group lead-actions-form-group">
+        <label className="form-label lead-actions-label">
           Internal Admin Notes
         </label>
         <textarea
           value={adminNote}
           onChange={(e) => setAdminNote(e.target.value)}
-          className="form-input"
           placeholder="Add correspondence history, follow-up logs, or custom notes..."
           rows={4}
-          style={{ resize: 'vertical', fontFamily: 'inherit' }}
+          className="form-input lead-actions-textarea"
         />
         <button
           type="button"
           onClick={() => handleUpdate()}
           disabled={loading}
-          className="btn primary-btn"
-          style={{ fontSize: '13px', height: '36px', paddingInline: '16px', marginTop: '10px' }}
+          className="btn primary-btn lead-actions-save-btn"
         >
           Save Internal Notes
         </button>
       </div>
 
-      <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: 0 }} />
+      <hr className="lead-actions-hr" />
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-          <span style={{ fontSize: '14px', fontWeight: '600', color: '#64748b' }}>Decision:</span>
+      <div className="lead-actions-controls">
+        <div className="lead-actions-decisions">
+          <span className="lead-actions-decision-label">Decision:</span>
           
           <button
             type="button"
             onClick={() => handleUpdate('approved')}
             disabled={loading}
-            className={`btn ${status === 'approved' ? 'primary-btn' : 'btn-secondary'}`}
-            style={{
-              fontSize: '13px',
-              height: '36px',
-              paddingInline: '16px',
-              background: status === 'approved' ? '#16a34a' : undefined,
-              borderColor: status === 'approved' ? '#16a34a' : undefined,
-              color: status === 'approved' ? '#fff' : undefined,
-            }}
+            className={`btn lead-actions-decision-btn ${status === 'approved' ? 'primary-btn lead-actions-btn-approved' : 'btn-secondary'}`}
           >
             Approve Pitch
           </button>
@@ -141,15 +123,7 @@ export default function LeadActions({ lead }) {
             type="button"
             onClick={() => handleUpdate('declined')}
             disabled={loading}
-            className={`btn ${status === 'declined' ? 'primary-btn' : 'btn-secondary'}`}
-            style={{
-              fontSize: '13px',
-              height: '36px',
-              paddingInline: '16px',
-              background: status === 'declined' ? '#dc2626' : undefined,
-              borderColor: status === 'declined' ? '#dc2626' : undefined,
-              color: status === 'declined' ? '#fff' : undefined,
-            }}
+            className={`btn lead-actions-decision-btn ${status === 'declined' ? 'primary-btn lead-actions-btn-declined' : 'btn-secondary'}`}
           >
             Decline Pitch
           </button>
@@ -159,17 +133,7 @@ export default function LeadActions({ lead }) {
           type="button"
           onClick={handleDelete}
           disabled={loading}
-          className="btn"
-          style={{
-            fontSize: '13px',
-            height: '36px',
-            paddingInline: '16px',
-            background: '#fee2e2',
-            color: '#dc2626',
-            border: '1px solid #fca5a5',
-            cursor: 'pointer',
-            fontWeight: '600',
-          }}
+          className="btn lead-actions-delete-btn"
         >
           Delete Lead
         </button>

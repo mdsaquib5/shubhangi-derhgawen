@@ -6,6 +6,7 @@ const LeadSchema = new mongoose.Schema(
     website: { type: String, default: '' },
     contactName: { type: String, default: '' },
     contactRole: { type: String, default: '' },
+    contactPhone: { type: String, default: '' },
     budget: { type: String, default: '' },
     timeline: { type: String, default: '' },
     collabTypes: { type: [String], default: [] },

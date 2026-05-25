@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" data-scroll-behavior="smooth" className="smooth-scroll">
       <body className={`${outfit.variable} ${barlow.variable} ${sacramento.variable} ${outfit.className}`}>
         <Header />
         {children}

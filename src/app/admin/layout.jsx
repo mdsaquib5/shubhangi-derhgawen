@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from '@/components/admin/Sidebar';
-import '@/app/cms-styles.css';
 
 export const metadata = {
   title: 'Admin Dashboard - Portfolio CMS',

@@ -3,23 +3,24 @@
 import React, { useState } from 'react';
 
 const COLLAB_TYPES = [
-  'Sponsored post',
-  'Product review',
-  'YouTube integration',
-  'Instagram Reel',
-  'Newsletter',
-  'Workshop/Event',
-  'Podcast',
-  'Brand Ambassador',
+  'Freelance Writing / Reporting',
+  'Editorial Consulting',
+  'Investigative Journalism',
+  'Speaking Engagements / Panels',
+  'Media Training / Workshops',
+  'Documentary / Audio Production',
+  'Fact-Checking / Research',
+  'Guest Column / Op-Ed Writing',
 ];
 
 const NICHES = [
-  'Education',
-  'Tech',
-  'Finance',
-  'Lifestyle',
-  'Journalism',
-  'Productivity',
+  'Politics & Governance',
+  'Social Issues & Human Rights',
+  'Science & Environment',
+  'Business & Economics',
+  'Culture & Arts',
+  'Journalism & Media',
+  'Education & Tech',
   'Other',
 ];
 
@@ -45,6 +46,7 @@ export default function CollabForm() {
     website: '',
     contactName: '',
     contactRole: '',
+    contactPhone: '',
     collabTypes: [],
     niches: [],
     budget: '',
@@ -70,6 +72,7 @@ export default function CollabForm() {
       }
       if (!formData.contactName.trim()) stepErrors.contactName = 'Your name is required';
       if (!formData.contactRole.trim()) stepErrors.contactRole = 'Your role is required';
+      if (!formData.contactPhone.trim()) stepErrors.contactPhone = 'Phone number is required';
     }
 
     if (currentStep === 2) {
@@ -122,7 +125,7 @@ export default function CollabForm() {
       const types = prev.collabTypes.includes(type)
         ? prev.collabTypes.filter((t) => t !== type)
         : [...prev.collabTypes, type];
-      
+
       if (errors.collabTypes) {
         setErrors((err) => ({ ...err, collabTypes: '' }));
       }
@@ -178,16 +181,13 @@ export default function CollabForm() {
   };
 
   return (
-    <div className="cms-card" style={{ maxWidth: '700px', margin: '0 auto' }}>
+    <div className="cms-card">
       {step < 5 && (
         <>
-          <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-            <h1 className="cms-title-gradient" style={{ fontSize: '32px', marginBottom: '10px' }}>
+          <div className="collab-form-header">
+            <div className="cms-title-gradient collab-form-title">
               Work With Me
-            </h1>
-            <p style={{ color: '#666', fontSize: '15px' }}>
-              Fill in the form to pitch a collaboration, and let's create something amazing.
-            </p>
+            </div>
           </div>
 
           <div className="stepper-progress">
@@ -209,7 +209,8 @@ export default function CollabForm() {
             </div>
           </div>
         </>
-      )}
+      )
+      }
 
       <form onSubmit={handleSubmit}>
         <input
@@ -224,9 +225,6 @@ export default function CollabForm() {
 
         {step === 1 && (
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '20px', color: '#1e293b' }}>
-              Step 1: Brand & Contact Basics
-            </h2>
 
             <div className="form-group">
               <label className="form-label" htmlFor="brand">Brand Name *</label>
@@ -243,7 +241,7 @@ export default function CollabForm() {
             </div>
 
             <div className="form-group">
-              <label className="form-label" htmlFor="website">Website URL (must start with https://) *</label>
+              <label className="form-label" htmlFor="website">Website Url *</label>
               <input
                 type="text"
                 id="website"
@@ -256,7 +254,7 @@ export default function CollabForm() {
               {errors.website && <p className="error-text">{errors.website}</p>}
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div className="collab-form-grid">
               <div className="form-group">
                 <label className="form-label" htmlFor="contactName">Contact Name *</label>
                 <input
@@ -286,7 +284,21 @@ export default function CollabForm() {
               </div>
             </div>
 
-            <div className="form-buttons" style={{ justifyContent: 'flex-end' }}>
+            <div className="form-group">
+              <label className="form-label" htmlFor="contactPhone">Phone Number *</label>
+              <input
+                type="tel"
+                id="contactPhone"
+                name="contactPhone"
+                value={formData.contactPhone}
+                onChange={handleInputChange}
+                className={`form-input ${errors.contactPhone ? 'form-input-error' : ''}`}
+                placeholder="e.g. +91 98765 43210"
+              />
+              {errors.contactPhone && <p className="error-text">{errors.contactPhone}</p>}
+            </div>
+
+            <div className="form-buttons collab-form-btn-right">
               <button type="button" onClick={handleNext} className="btn primary-btn">
                 Next Step
               </button>
@@ -296,9 +308,6 @@ export default function CollabForm() {
 
         {step === 2 && (
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '20px', color: '#1e293b' }}>
-              Step 2: Collaboration & Niches
-            </h2>
 
             <div className="form-group">
               <label className="form-label">Collaboration Types (Select all that apply) *</label>
@@ -313,7 +322,7 @@ export default function CollabForm() {
                   </div>
                 ))}
               </div>
-              {errors.collabTypes && <p className="error-text" style={{ marginTop: '-15px', marginBottom: '15px' }}>{errors.collabTypes}</p>}
+              {errors.collabTypes && <p className="error-text collab-form-error-msg">{errors.collabTypes}</p>}
             </div>
 
             <div className="form-group">
@@ -329,7 +338,7 @@ export default function CollabForm() {
                   </div>
                 ))}
               </div>
-              {errors.niches && <p className="error-text" style={{ marginTop: '-15px', marginBottom: '15px' }}>{errors.niches}</p>}
+              {errors.niches && <p className="error-text collab-form-error-msg">{errors.niches}</p>}
             </div>
 
             <div className="form-buttons">
@@ -345,11 +354,8 @@ export default function CollabForm() {
 
         {step === 3 && (
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '20px', color: '#1e293b' }}>
-              Step 3: Budget, Timeline & Campaign Goals
-            </h2>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div className="collab-form-grid">
               <div className="form-group">
                 <label className="form-label" htmlFor="budget">Estimated Budget *</label>
                 <select
@@ -397,9 +403,8 @@ export default function CollabForm() {
                 rows={5}
                 value={formData.goals}
                 onChange={handleInputChange}
-                className={`form-input ${errors.goals ? 'form-input-error' : ''}`}
+                className={`form-input collab-form-textarea ${errors.goals ? 'form-input-error' : ''}`}
                 placeholder="Tell us what you want to build or promote. What are your key goals?"
-                style={{ resize: 'vertical' }}
               />
               {errors.goals && <p className="error-text">{errors.goals}</p>}
             </div>
@@ -417,58 +422,60 @@ export default function CollabForm() {
 
         {step === 4 && (
           <div>
-            <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '20px', color: '#1e293b' }}>
-              Step 4: Review Details
-            </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', background: '#f8fafc', padding: '20px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
+            <div className="collab-form-review-box">
               <div>
-                <strong style={{ color: '#64748b', fontSize: '13px', textTransform: 'uppercase' }}>Brand & Contact:</strong>
-                <p style={{ margin: '5px 0 0 0', fontWeight: '500' }}>
+                <strong className="collab-form-review-label">Brand & Contact:</strong>
+                <p className="collab-form-review-text">
                   {formData.brand} ({formData.website})
                 </p>
-                <p style={{ margin: '3px 0 0 0', fontSize: '14px', color: '#475569' }}>
+                <p className="collab-form-review-subtext">
                   Pitch by {formData.contactName} ({formData.contactRole})
                 </p>
+                {formData.contactPhone && (
+                  <p className="collab-form-review-subtext">
+                    Phone: {formData.contactPhone}
+                  </p>
+                )}
               </div>
 
-              <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '0' }} />
+              <hr className="collab-form-review-hr" />
 
               <div>
-                <strong style={{ color: '#64748b', fontSize: '13px', textTransform: 'uppercase' }}>Collaboration & Niches:</strong>
-                <p style={{ margin: '5px 0 0 0', fontSize: '14px', color: '#334155' }}>
+                <strong className="collab-form-review-label">Collaboration & Niches:</strong>
+                <p className="collab-form-review-text-normal">
                   <strong>Types:</strong> {formData.collabTypes.join(', ')}
                 </p>
-                <p style={{ margin: '3px 0 0 0', fontSize: '14px', color: '#334155' }}>
+                <p className="collab-form-review-text-normal">
                   <strong>Niches:</strong> {formData.niches.join(', ')}
                 </p>
               </div>
 
-              <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '0' }} />
+              <hr className="collab-form-review-hr" />
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+              <div className="collab-form-review-grid">
                 <div>
-                  <strong style={{ color: '#64748b', fontSize: '13px', textTransform: 'uppercase' }}>Budget:</strong>
-                  <p style={{ margin: '5px 0 0 0', fontWeight: '600', color: '#f820a3' }}>{formData.budget}</p>
+                  <strong className="collab-form-review-label">Budget:</strong>
+                  <p className="collab-form-review-budget">{formData.budget}</p>
                 </div>
                 <div>
-                  <strong style={{ color: '#64748b', fontSize: '13px', textTransform: 'uppercase' }}>Timeline:</strong>
-                  <p style={{ margin: '5px 0 0 0', fontWeight: '600', color: '#ffa945' }}>{formData.timeline}</p>
+                  <strong className="collab-form-review-label">Timeline:</strong>
+                  <p className="collab-form-review-timeline">{formData.timeline}</p>
                 </div>
               </div>
 
-              <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '0' }} />
+              <hr className="collab-form-review-hr" />
 
               <div>
-                <strong style={{ color: '#64748b', fontSize: '13px', textTransform: 'uppercase' }}>Campaign Goals:</strong>
-                <p style={{ margin: '5px 0 0 0', fontSize: '14px', color: '#334155', whiteSpace: 'pre-line', lineHeight: '1.5' }}>
+                <strong className="collab-form-review-label">Campaign Goals:</strong>
+                <p className="collab-form-review-goals">
                   {formData.goals}
                 </p>
               </div>
             </div>
 
             {submitError && (
-              <div style={{ background: '#fef2f2', border: '1px solid #fca5a5', padding: '12px 16px', borderRadius: '6px', color: '#991b1b', marginBottom: '20px', fontSize: '14px' }}>
+              <div className="collab-form-submit-error">
                 {submitError}
               </div>
             )}
@@ -492,14 +499,14 @@ export default function CollabForm() {
         {step === 5 && (
           <div className="success-card">
             <div className="success-icon">✓</div>
-            <h2 style={{ fontSize: '28px', fontWeight: '700', color: '#1e293b', marginBottom: '10px' }}>
+            <h2 className="collab-form-success-title">
               Pitch Submitted Successfully!
             </h2>
-            <p style={{ color: '#666', fontSize: '15px', maxWidth: '500px', margin: '0 auto 20px auto', lineHeight: '1.5' }}>
+            <p className="collab-form-success-desc">
               Thank you for pitching a collaboration! Your pitch has been recorded. Write down your reference ID to track your application status.
             </p>
             <div className="ref-code-box">{referenceId}</div>
-            <div style={{ marginTop: '30px' }}>
+            <div className="collab-form-success-btn-wrap">
               <button
                 type="button"
                 onClick={() => {
@@ -508,6 +515,7 @@ export default function CollabForm() {
                     website: '',
                     contactName: '',
                     contactRole: '',
+                    contactPhone: '',
                     collabTypes: [],
                     niches: [],
                     budget: '',
@@ -518,8 +526,7 @@ export default function CollabForm() {
                   setStep(1);
                   setReferenceId('');
                 }}
-                className="btn primary-btn"
-                style={{ margin: '0 auto' }}
+                className="btn primary-btn collab-form-success-btn"
               >
                 Submit Another Pitch
               </button>
@@ -527,6 +534,6 @@ export default function CollabForm() {
           </div>
         )}
       </form>
-    </div>
+    </div >
   );
 }

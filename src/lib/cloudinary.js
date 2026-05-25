@@ -8,13 +8,30 @@ cloudinary.config({
 
 export { cloudinary };
 
-export async function uploadMedia(fileBuffer, folder, resourceType = 'image') {
+export async function uploadMedia(fileBuffer, folder, resourceType = 'image', originalName = '') {
   return new Promise((resolve, reject) => {
+    const uploadOptions = {
+      folder,
+      resource_type: resourceType,
+    };
+
+    if (originalName) {
+      const ext = originalName.split('.').pop().toLowerCase();
+      const cleanName = originalName
+        .substring(0, originalName.lastIndexOf('.'))
+        .replace(/[^a-zA-Z0-9-_]/g, '_');
+      
+      if (resourceType === 'raw') {
+        // For raw files (PDFs, docs, etc.), Cloudinary requires the extension in the public_id to serve it correctly in the browser.
+        uploadOptions.public_id = `${cleanName}_${Date.now()}.${ext}`;
+      } else {
+        // For image/video (including audio), the extension is automatically appended by Cloudinary, so public_id shouldn't contain it.
+        uploadOptions.public_id = `${cleanName}_${Date.now()}`;
+      }
+    }
+
     const uploadStream = cloudinary.uploader.upload_stream(
-      {
-        folder,
-        resource_type: resourceType,
-      },
+      uploadOptions,
       (error, result) => {
         if (error) {
           reject(error);

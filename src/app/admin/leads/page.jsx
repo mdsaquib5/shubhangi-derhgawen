@@ -27,13 +27,15 @@ export default async function AdminLeadsPage({ searchParams }) {
 
   return (
     <div>
-      <div style={{ marginBottom: '30px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '700', color: '#0f172a', margin: '0 0 8px 0' }}>
-          Collaboration Pitches
-        </h1>
-        <p style={{ color: '#64748b', margin: 0, fontSize: '15px' }}>
-          Review brand inquiries, assess automated quality scores, and filter collaboration leads.
-        </p>
+      <div className="admin-page-header">
+        <div>
+          <h1 className="admin-page-title">
+            Collaboration Pitches
+          </h1>
+          <p className="admin-page-subtitle">
+            Review brand inquiries, assess automated quality scores, and filter collaboration leads.
+          </p>
+        </div>
       </div>
 
       <div className="admin-tabs">
@@ -41,21 +43,20 @@ export default async function AdminLeadsPage({ searchParams }) {
           <Link
             key={tab.key}
             href={tab.key === 'all' ? '/admin/leads' : `/admin/leads?status=${tab.key}`}
-            className={`admin-tab ${currentTab === tab.key ? 'active' : ''}`}
-            style={{ textDecoration: 'none' }}
+            className={`admin-tab admin-tab-link ${currentTab === tab.key ? 'active' : ''}`}
           >
             {tab.label} ({leads.filter(l => tab.key === 'all' || l.status === tab.key).length})
           </Link>
         ))}
       </div>
 
-      <div className="cms-card" style={{ padding: '24px' }}>
+      <div className="cms-card admin-dashboard-card">
         {leads.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '40px 0', color: '#64748b' }}>
-            No pitches found matching status: <strong style={{ color: '#f820a3' }}>{currentTab}</strong>
+          <div className="admin-page-empty">
+            No pitches found matching status: <strong className="admin-page-empty-strong">{currentTab}</strong>
           </div>
         ) : (
-          <div style={{ overflowX: 'auto' }}>
+          <div className="admin-dashboard-table-wrap">
             <table className="admin-table">
               <thead>
                 <tr>

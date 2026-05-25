@@ -32,15 +32,15 @@ export default function MediaBlock({ media }) {
 
       {/* Images Grid */}
       {images.length > 0 && (
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '15px', color: '#1e293b' }}>Gallery</h3>
+        <div className="media-block-section">
+          <h3 className="media-block-heading">Gallery</h3>
           <div className="media-grid">
             {images.map((item, idx) => (
-              <div key={idx} className="media-block-item" style={{ background: '#fff' }}>
+              <div key={idx} className="media-block-item media-block-item-gallery">
                 <img
                   src={item.url}
                   alt={item.label || 'Gallery Image'}
-                  style={{ width: '100%', height: '180px', objectFit: 'cover', display: 'block' }}
+                  className="media-block-image"
                 />
                 {item.label && <div className="media-block-label">{item.label}</div>}
               </div>
@@ -51,14 +51,14 @@ export default function MediaBlock({ media }) {
 
       {/* Videos List */}
       {videos.length > 0 && (
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '15px', color: '#1e293b' }}>Videos</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div className="media-block-section">
+          <h3 className="media-block-heading">Videos</h3>
+          <div className="media-block-list">
             {videos.map((item, idx) => (
-              <div key={idx} className="media-block-item" style={{ maxWidth: '640px', background: '#000' }}>
-                <video src={item.url} controls style={{ width: '100%', display: 'block' }} />
+              <div key={idx} className="media-block-item media-block-item-video">
+                <video src={item.url} controls className="media-block-video" />
                 {item.label && (
-                  <div className="media-block-label" style={{ background: '#fff', borderTop: '1px solid #f1f5f9' }}>
+                  <div className="media-block-label media-block-label-video">
                     {item.label}
                   </div>
                 )}
@@ -70,15 +70,15 @@ export default function MediaBlock({ media }) {
 
       {/* Audios List */}
       {audios.length > 0 && (
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '15px', color: '#1e293b' }}>Audio Files</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '500px' }}>
+        <div className="media-block-section">
+          <h3 className="media-block-heading">Audio Files</h3>
+          <div className="media-block-audio-list">
             {audios.map((item, idx) => (
-              <div key={idx} className="media-block-item" style={{ padding: '16px', background: '#fff' }}>
-                <div style={{ fontWeight: '500', fontSize: '14px', marginBottom: '8px', color: '#334155' }}>
+              <div key={idx} className="media-block-item media-block-item-audio">
+                <div className="media-block-audio-title">
                   {item.label || 'Audio track'}
                 </div>
-                <audio src={item.url} controls style={{ width: '100%', display: 'block' }} />
+                <audio src={item.url} controls className="media-block-video" />
               </div>
             ))}
           </div>
@@ -87,27 +87,26 @@ export default function MediaBlock({ media }) {
 
       {/* PDF Viewers */}
       {pdfs.length > 0 && (
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '15px', color: '#1e293b' }}>Documents (PDF)</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div className="media-block-section">
+          <h3 className="media-block-heading">Documents (PDF)</h3>
+          <div className="media-block-list">
             {pdfs.map((item, idx) => (
-              <div key={idx} className="media-block-item" style={{ padding: '20px', background: '#fff' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                  <span style={{ fontWeight: '600', color: '#334155' }}>{item.label || 'PDF Document'}</span>
+              <div key={idx} className="media-block-item media-block-item-pdf">
+                <div className="media-block-pdf-header">
+                  <span className="media-block-pdf-title">{item.label || 'PDF Document'}</span>
                   <a
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn primary-btn"
-                    style={{ fontSize: '14px', height: '36px', paddingInline: '16px', textDecoration: 'none' }}
+                    className="btn primary-btn media-block-pdf-btn"
                   >
                     Open PDF in New Tab
                   </a>
                 </div>
-                <div style={{ width: '100%', height: '500px', borderRadius: '6px', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
+                <div className="media-block-pdf-frame-container">
                   <iframe
                     src={`${item.url}#toolbar=1`}
-                    style={{ width: '100%', height: '100%', border: 'none' }}
+                    className="media-block-pdf-frame"
                     title={item.label || 'PDF Document'}
                   />
                 </div>
@@ -120,15 +119,15 @@ export default function MediaBlock({ media }) {
       {/* Other Files */}
       {otherFiles.length > 0 && (
         <div>
-          <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '15px', color: '#1e293b' }}>Downloads</h3>
-          <ul style={{ paddingLeft: '20px' }}>
+          <h3 className="media-block-heading">Downloads</h3>
+          <ul className="media-block-downloads">
             {otherFiles.map((item, idx) => (
-              <li key={idx} style={{ marginBottom: '10px' }}>
+              <li key={idx} className="media-block-download-item">
                 <a
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: '#f820a3', fontWeight: '500' }}
+                  className="media-block-download-link"
                 >
                   {item.label || `Attachment ${idx + 1}`} ({item.format.toUpperCase()})
                 </a>
