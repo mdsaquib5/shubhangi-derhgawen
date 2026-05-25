@@ -43,8 +43,16 @@ export default async function AdminLeadDetailPage({ params }) {
   if (goalsLength > 100) goalsPoints = 20;
   else if (goalsLength > 50) goalsPoints = 15;
 
+  const premiumNiches = [
+    'Politics & Governance',
+    'Social Issues & Human Rights',
+    'Science & Environment',
+    'Business & Economics',
+    'Journalism & Media',
+    'Education & Tech',
+  ];
   const hasNicheMatch = (lead.niches || []).some((n) =>
-    ['Education', 'Tech', 'Journalism', 'Productivity'].some(
+    premiumNiches.some(
       (match) => n.toLowerCase().includes(match.toLowerCase())
     )
   );

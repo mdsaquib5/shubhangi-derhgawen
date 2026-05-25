@@ -7,8 +7,8 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 
 export const metadata = {
-  title: "Influencer Porfolio",
-  description: "Influencer Porfolio",
+  title: "Shubhangi Derhgawen | Journalist Portfolio",
+  description: "Official portfolio of Shubhangi Derhgawen — journalist, storyteller, and media professional.",
 };
 
 export default function RootLayout({ children }) {

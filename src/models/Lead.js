@@ -47,8 +47,17 @@ LeadSchema.pre('save', async function () {
   if (goalsLength > 100) goalsScore = 20;
   else if (goalsLength > 50) goalsScore = 15;
 
+  // Niche match — aligned with CollabForm NICHES list
+  const premiumNiches = [
+    'Politics & Governance',
+    'Social Issues & Human Rights',
+    'Science & Environment',
+    'Business & Economics',
+    'Journalism & Media',
+    'Education & Tech',
+  ];
   const hasNicheMatch = (this.niches || []).some((n) =>
-    ['Education', 'Tech', 'Journalism', 'Productivity'].some(
+    premiumNiches.some(
       (match) => n.toLowerCase().includes(match.toLowerCase())
     )
   );
@@ -67,10 +76,6 @@ LeadSchema.pre('save', async function () {
   }
 });
 
-if (mongoose.models.Lead) {
-  delete mongoose.models.Lead;
-}
-
-const Lead = mongoose.model('Lead', LeadSchema);
+const Lead = mongoose.models.Lead || mongoose.model('Lead', LeadSchema);
 
 export default Lead;

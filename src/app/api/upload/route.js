@@ -14,6 +14,15 @@ export async function POST(req) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
+    // Limit file size to 10MB
+    const MAX_SIZE = 10 * 1024 * 1024;
+    if (buffer.length > MAX_SIZE) {
+      return NextResponse.json(
+        { error: 'File too large. Maximum allowed size is 10MB.' },
+        { status: 413 }
+      );
+    }
+
     const mimeType = file.type;
     let resourceType = 'image';
 

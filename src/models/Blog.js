@@ -69,10 +69,6 @@ BlogSchema.pre('save', async function () {
   }
 });
 
-if (mongoose.models.Blog) {
-  delete mongoose.models.Blog;
-}
-
-const Blog = mongoose.model('Blog', BlogSchema);
+const Blog = mongoose.models.Blog || mongoose.model('Blog', BlogSchema);
 
 export default Blog;
