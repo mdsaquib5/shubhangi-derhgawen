@@ -43,7 +43,7 @@ export default function CollabForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     brand: '',
-    website: '',
+    website: 'https://',
     contactName: '',
     contactRole: '',
     contactPhone: '',
@@ -65,7 +65,7 @@ export default function CollabForm() {
 
     if (currentStep === 1) {
       if (!formData.brand.trim()) stepErrors.brand = 'Brand name is required';
-      if (!formData.website.trim()) {
+      if (!formData.website.trim() || formData.website === 'https://') {
         stepErrors.website = 'Website URL is required';
       } else if (!formData.website.startsWith('https://')) {
         stepErrors.website = 'URL must start with https://';
@@ -512,7 +512,7 @@ export default function CollabForm() {
                 onClick={() => {
                   setFormData({
                     brand: '',
-                    website: '',
+                    website: 'https://',
                     contactName: '',
                     contactRole: '',
                     contactPhone: '',
